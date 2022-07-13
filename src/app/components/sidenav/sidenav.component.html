@@ -1,0 +1,30 @@
+<!-- Side Bar -->
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="logo-container">
+    <button class="btn-logo" mat-button (click)="toggleCollapse()">
+      <img [src]="collapsed ? '../../../assets/images/logo-sidenav.png' : '../../../assets/images/icon-sidenav.png'" alt="" class="logo" [ngClass]="collapsed ? 'logo-sidenav' : 'icon-sidenav'">
+    </button>
+    <div class="logo-text"></div>
+    <button class="btn-close" mat-button *ngIf="collapsed" (click)="closeSideNav()"><mat-icon>close</mat-icon></button>
+  </div>
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active">
+        <mat-icon class="sidenav=link-icon">{{ data.icon }}</mat-icon>
+        <span class="sidenav-link-text" *ngIf="collapsed">{{ data.label }}</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- Top Bar -->
+<div class="top-bar mat-elevation-z3" fxLayout="row" fxLayoutAlign="auto center" fxLayoutGap="1rem">
+  <div fxFlex="initial"><span class="title">Página Inicial</span></div>
+  <div fxFlex></div>
+  <div fxFlex></div>
+  <div fxFlex="nogrow"><div class="session">Fim da sessão em <strong>23min</strong></div></div>
+  <div fxFlex="nogrow"><span class="user">Olá, Thiago Santos! | <strong>1326257-2</strong></span></div>
+  <div class="button" fxFlex="nogrow">
+    <button mat-button class="btn-top-bar"><mat-icon>chat_bubble_outline</mat-icon></button>
+  </div>
+</div>

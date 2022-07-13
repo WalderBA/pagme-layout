@@ -1,0 +1,66 @@
+<div class="div-default" fxLayout="row" fxFlexFill fxLayoutGap="1rem">
+  <div class="left-side" fxLayout="column" fxFlex="nogrow" fxLayoutGap="1rem">
+    <div class="div-search" fxLayout="row" fxLayoutGap=".5rem">
+      <input type="text" class="input-search" placeholder="Pesquisar" fxFlex>
+      <button mat-raised-button class="btn-search" fxFlex="nogrow"><mat-icon>search</mat-icon></button>
+    </div>
+    <div class="div-content" fxLayout="column" fxLayoutGap="1rem">
+      <ul class="notif-nav">
+        <li class="notif-item" *ngFor="let item of notifData" routerLinkActive="active">
+          <a href="" class="notif-link" [routerLink]="[item.routeLink]">
+            <mat-icon>{{ item.icon }}</mat-icon>
+            <span class="sidenav-link-text">{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="right-side" fxLayout="row" fxFlex fxLayoutGap="1rem">
+    <div class="div-col1" fxLayout="column" fxFlex="0 1 50%" fxLayoutGap="1rem">
+      <h2 class="color-theme subtitle">Transferências</h2>
+      <div class="row" fxLayout="row" fxFlex="0 0 auto" fxLayoutGap="1rem">
+        <button mat-raised-button color="primary" fxFlex>Transferir para Contas Internas</button>
+        <button mat-raised-button fxFlex>Transferir para Contas de outras instituições</button>
+      </div>
+      <div class="row" fxLayout="row" fxLayoutAlign="space-between center" fxFlex="0 0 auto" fxLayoutGap="1rem">
+        <div class="div-col1" fxLayout="column" fxFlex="nogrow" fxLayoutGap="1rem">
+          <h3><strong>Novo contato para transferir</strong></h3>
+          <p>Informe o CPF, email ou celular do usuário para o qual você quer transferir dinheiro ou busque na sua lista de favorecidos.</p>
+        </div>
+        <div class="div-col1" fxLayout="column" fxFlex="nogrow" fxLayoutGap="1rem">
+          <button mat-raised-button color="primary"><mat-icon>attach_money</mat-icon>Ver saldo e limites</button>
+        </div>
+      </div>
+      <div class="row" fxLayout="row" fxLayoutAlign="flex-start center" fxFlex="0 0 auto" fxLayoutGap="1rem">
+        <input type="text" placeholder="Informe CPF, email ou celular" fxFlex="0 1 50%">
+        <button mat-raised-button color="primary"><mat-icon>account_circle</mat-icon>Buscar favorecidos</button>
+      </div>
+      <div class="row" fxLayout="row" fxLayoutAlign="flex-star center" fxFlex="0 0 auto" fxLayoutGap="1rem">
+        <div fxLayout="column">
+          <label for="">Informe o valor</label>
+          <input type="text" placeholder="R$ 0,00" fxFlex="0 1 50%">
+        </div>
+        <div fxLayout="column">
+          <label for="">Ou escolha umas das opções abaixo</label>
+          <div fxLayout="row" fxLayoutGap=".5rem">
+            <button mat-raised-button color="primary">R$ 20,00</button>
+            <button mat-raised-button color="primary">R$ 50,00</button>
+            <button mat-raised-button color="primary">R$ 100,00</button>
+            <button mat-raised-button color="primary">R$ 300,00</button>
+            <button mat-raised-button color="primary">R$ 500,00</button>
+          </div>
+        </div>
+      </div>
+      <div class="row" fxLayout="row" fxLayoutAlign="flex-start center" fxFlex="0 0 auto" fxLayoutGap="1rem">
+        <div fxLayout="column" fxFlex="0 0 27%">
+          <label for="">Data de transferência</label>
+          <input type="date" fxFlex="1 0 50%">
+        </div>
+      </div>
+      <div class="row" fxLayout="row" fxLayoutAlign="flex-end center" fxFlex="0 0 auto" fxLayoutGap="1rem">
+        <button mat-raised-button color="primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>

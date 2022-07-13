@@ -1,0 +1,66 @@
+<div class="div-background" color="primary"></div>
+<!-- <div class="container"> -->
+<div class="wrapper login" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column">
+  <div class="content" fxLayout="column" fxLayoutAlign="center center">
+    <div class="div-header" fxLayout="column" fxLayoutAlign="center center">
+      <img class="logo-pagme mb-4" src="../../../assets/images/logo-pagme.png" alt="">
+      <h3 class="text-title">Seja bem-vindo(a) ao Internet Payment Pagme.</h3>
+      <h5 class="text-subtitle">Caso não possua dados de acesso procure um de nossos colaboradores.</h5>
+    </div>
+    <mat-card class="col-card-login" fxLayout="column">
+      <mat-card-header fxLayoutAlign="center center" color="primary">
+        <mat-card-subtitle fxLayoutAlign="center center">acesso</mat-card-subtitle>
+        <mat-card-title fxLayoutAlign="center center">Acesse a plataforma informando os seus dados corretamente.</mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayout="row" fxLayoutAlign="" fxLayoutGap="2">
+        <div class="inputs" fxLayout="column">
+          <mat-form-field appearance="legacy" class="form-fild-login">
+            <mat-label>CPF OU EMAIL</mat-label>
+            <mat-icon matPrefix>email</mat-icon>
+            <input matInput type="text" class="example-right-align" [(ngModel)]="usuario.nome">
+          </mat-form-field>
+          <mat-form-field appearance="legacy" class="form-fild-login">
+            <mat-label>SENHA</mat-label>
+            <mat-icon matPrefix>lock</mat-icon>
+            <input matInput type="password" class="example-right-align" [(ngModel)]="usuario.senha">
+          </mat-form-field>
+          <a href="javascript:;">Esqueci minha senha</a>
+          <button mat-raised-button color="primary" class="login" (click)="login()">ACESSAR</button>
+        </div>
+        <div class="buttons" fxLayout="row wrap" fxLayoutAlign="center stretch">
+          <button mat-raised-button>7</button>
+          <button mat-raised-button>8</button>
+          <button mat-raised-button>9</button>
+          <button mat-raised-button>4</button>
+          <button mat-raised-button>5</button>
+          <button mat-raised-button>6</button>
+          <button mat-raised-button>1</button>
+          <button mat-raised-button>2</button>
+          <button mat-raised-button>3</button>
+          <button mat-raised-button>0</button>
+          <button mat-raised-button><mat-icon>backspace</mat-icon></button>
+        </div>
+      </mat-card-content>
+      <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+        <!-- <p>Ou faça loggin com:</p>
+        <div fxLayut="row" fxLayoutAlign="center center">
+          <button mat-button mat-raised-button><i class="fab fa-google" color="danger"></i>&nbsp;Google</button>
+          <button mat-button mat-raised-button><i class="fab fa-facebook-f" color="primary"></i>&nbsp;Facebook</button>
+        </div> -->
+      </mat-card-actions>
+    </mat-card>
+    <div class="div-footer" fxLayout="column" fxLayoutAlign="center center">
+      <h5 class="text-subtitle">Baixe nosso aplicativo.</h5>
+      <h3 class="text-title">Baixe hoje e realize movimentações financeiras de forma fácil, ágil e segura! Baixe nosso aplicativo.</h3>
+    </div>
+    <div class="div-socials" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
+      <button mat-mini-fab color="white" aria-label="Apple">
+        <mat-icon>apple</mat-icon>
+      </button>
+      <button mat-mini-fab color="white" aria-label="Android">
+        <mat-icon>android</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- </div> -->

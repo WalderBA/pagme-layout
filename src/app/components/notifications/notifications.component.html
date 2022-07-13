@@ -1,0 +1,238 @@
+<div class="div-default" fxLayout="row" fxFlexFill fxLayoutGap="1rem">
+  <div class="left-side" fxLayout="column" fxFlex="nogrow" fxLayoutGap="1rem">
+    <div class="div-search" fxLayout="row" fxLayoutGap=".5rem">
+      <input type="text" class="input-search" placeholder="Pesquisar" fxFlex>
+      <button mat-raised-button class="btn-search" fxFlex="nogrow"><mat-icon>search</mat-icon></button>
+    </div>
+    <div class="div-content" fxLayout="column" fxLayoutGap="1rem">
+      <div class="div-panel-notif" fxLayout="column" fxLayoutGap="1rem">
+        <h4 class="color-theme title">Notificações Recentes</h4>
+
+        <h5 class="color-theme subtitle">Alerta de Pagamentos</h5>
+        <div class="card-notif background-theme-lighter" fxFlex fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap=".5rem" *ngFor="let AlertPg of notifAlertPg">
+          <div class="header" fxLayout="row" fxLayoutAlign="center center">
+            <span class="header-title" fxFlex>{{ AlertPg.titulo }}</span>
+            <span class="icon" fxFlex="nogrow"><mat-icon class="color-theme">{{ AlertPg.icon }}</mat-icon></span>
+          </div>
+          <div class="content" fxFlex fxLayout="row" fxLayoutAlign="center center">
+            <span fxFlex fxLayoutAlign="start">Código: {{ AlertPg.codigo }}</span>
+            <span fxFlex fxLayoutAlign="end">Status: {{ AlertPg.status }}</span>
+          </div>
+        </div>
+
+        <h5 class="color-theme subtitle">Propostas recentes</h5>
+        <div class="card-notif background-theme-lighter" fxFlex fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap=".5rem" *ngFor="let PropRec of notifPropRec">
+          <div class="header" fxLayout="row" fxLayoutAlign="center center">
+            <span class="header-title" fxFlex>{{ PropRec.titulo }}</span>
+            <span class="icon" fxFlex="nogrow"><mat-icon class="color-theme">{{ PropRec.icon }}</mat-icon></span>
+          </div>
+          <div class="content" fxFlex fxLayout="row" fxLayoutAlign="center center">
+            <span fxFlex fxLayoutAlign="start">Código: {{ PropRec.codigo }}</span>
+            <span fxFlex fxLayoutAlign="end">Data: {{ PropRec.data }}</span>
+          </div>
+        </div>
+
+        <h5 class="color-theme subtitle">Contratos cadastrados recentes</h5>
+        <div class="card-notif background-theme-lighter" fxFlex fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap=".5rem" *ngFor="let contCadRec of contCadRec">
+          <div class="header" fxLayout="row" fxLayoutAlign="center center">
+            <span class="header-title" fxFlex>{{ contCadRec.nome }}</span>
+            <span class="icon" fxFlex="nogrow"><mat-icon class="color-theme">{{ contCadRec.icon }}</mat-icon></span>
+          </div>
+          <div class="content" fxFlex fxLayout="row" fxLayoutAlign="center center">
+            <span fxFlex fxLayoutAlign="start">Tipo: {{ contCadRec.tipo }}</span>
+            <span fxFlex fxLayoutAlign="end">Data: {{ contCadRec.data }}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="right-side" fxLayout="row" fxFlex fxLayoutGap="1rem">
+    <div class="div-col1" fxLayout="column" fxLayoutGap="1rem" fxFlex>
+
+      <div fxLayout="row" fxLayoutGap="1rem">
+        <div class="card-info card-saldo border-theme-light" fxFlex fxLayout="column" fxLayoutAlign="space-between stretch">
+          <div class="title" fxLayout="row" fxLayoutAlign="center center">
+            <span class="text" fxFlex>Seu saldo atual é</span>
+            <span class="icon" fxFlex="nogrow"><button mat-icon-button class="color-theme"><mat-icon>trending_up</mat-icon></button></span>
+          </div>
+          <div class="content">
+            <div class="content-info" fxLayout="row" fxLayoutAlign="center center">
+              <span class="span-content" fxFlex>R$ 2.036,73</span>
+              <span class="span-icon" fxFlex="nogrow"><button mat-icon-button class="color-theme"><mat-icon>visibility</mat-icon></button></span>
+            </div>
+          </div>
+          <div class="footer" fxLayoutAlign="start end">
+            <span class=""><a href="javascript:"><mat-icon>arrow_back_ios</mat-icon>&nbsp;Ver extrato completo</a></span>
+          </div>
+        </div>
+
+        <div class="card-info card-fatura border-theme-light" fxFlex fxLayout="column" fxLayoutAlign="space-between stretch">
+          <div class="title" fxLayout="row" fxLayoutAlign="center center">
+            <span class="text" fxFlex>Fatura do Cartão</span>
+            <span class="icon" fxFlexfxFlex="nogrow"><button mat-icon-button ><mat-icon>credit_card</mat-icon></button></span>
+          </div>
+          <div class="content" fxLayout="row" fxLayoutGap=".5rem">
+            <div class="content-info" fxLayout="column" fxFlex="70%" fxLayoutAlign="center start">
+              <span class="card-number">**** **** **** 1234</span>
+              <span class="card-value">R$ 1.233,00</span>
+            </div>
+            <div class="div-icon" fxFlex="30%">
+              <mat-icon fxFlex class="color-theme">credit_card</mat-icon>
+            </div>
+          </div>
+          <div class="footer" fxLayout="column" fxLayoutAlign="space-between stretch">
+            <div class="footer-title" fxFlex fxLayoutAlign="center">Limite do Cartão</div>
+            <span fxFlex><mat-progress-bar style="height: 10px; border-radius: 50px;" mode="determinate" value="65"></mat-progress-bar></span>
+            <span class="progress-label color-theme" fxFlex fxLayoutAlign="center">65%</span>
+          </div>
+        </div>
+
+        <div class="card-info card-estatistica border-theme-light" fxFlex fxLayout="column" fxLayoutAlign="space-between stretch">
+          <div class="title" fxLayout="row" fxLayoutAlign="center center">
+            <span class="text" fxFlex>Estatísticas</span>
+            <span class="icon" fxFlex="nogrow"><button mat-icon-button class="color-theme"><mat-icon>more_vert</mat-icon></button></span>
+          </div>
+          <div class="content-chart" fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap=".5rem">
+            <div fxFlex="0 1 50%" fxFill>
+              <div class="chart" fxFlex fxLayoutAlign="center center">
+                <div class="chart-center"></div>
+                <div class="donut"></div>
+              </div>
+            </div>
+            <div fxLayout="column" fxLayoutGap=".5rem" fxFlex="0 1 50%">
+              <div fxFlex="0 1 auto" fxLayout="row" fxLayoutGap=".5rem"><div class="legend orange"></div>&nbsp;Recebimentos</div>
+              <div fxFlex="0 1 auto" fxLayout="row" fxLayoutGap=".5rem"><div class="legend blue"></div>&nbsp;Pagamentos</div>
+              <div fxFlex="0 1 auto" fxLayout="row" fxLayoutGap=".5rem"><div class="legend green"></div>&nbsp;PIX</div>
+            </div>
+          </div>
+          <div class="footer" fxLayout="row center" fxLayoutAlign="start end">
+            <div class="recebimentos" fxFlex fxLayout="column" fxLayoutAlign="center center">
+              <div class="footer-title">Recebimentos</div>
+              <div class="footer-info">R$ 3.456,00</div>
+            </div>
+            <div class="pagamentos" fxFlex fxLayout="column" fxLayoutAlign="center center">
+              <div class="footer-title">Pagamentos</div>
+              <div class="footer-info">R$ 459,98</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="1rem">
+        <div class="card-transacoes border-theme-light" fxFlex fxLayout="column">
+          <div class="card-title color-theme">Últimas transações</div>
+          <div class="div-table">
+            <table class="tbl-transacoes" mat-table [dataSource]="tableTransacoes">
+              <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef>Data</th>
+                <td mat-cell *matCellDef="let transacoes">{{ transacoes.data }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="transacao">
+                <th mat-header-cell *matHeaderCellDef>Tipo de Transação</th>
+                <td mat-cell *matCellDef="let transacoes">{{ transacoes.transacao }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="valor">
+                <th mat-header-cell *matHeaderCellDef class="text-right">Valor</th>
+                <td mat-cell *matCellDef="let transacoes" class="text-right"><span [ngClass]="(transacoes.tipo == 'C') ? 'color-success' : 'color-danger'">{{ transacoes.valor }}</span></td>
+              </ng-container>
+
+              <ng-container matColumnDef="saldo">
+                <th mat-header-cell *matHeaderCellDef class="text-right">Saldo</th>
+                <td mat-cell *matCellDef="let transacoes" class="text-right">{{ transacoes.saldo }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="comprovante">
+                <th mat-header-cell *matHeaderCellDef class="text-right">Ações</th>
+                <td mat-cell *matCellDef="let transacoes" class="text-right"><button mat-raised-button class="bg-gray color-white">Ver comprovante</button></td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="columnsTransacoes"></tr>
+              <tr mat-row *matRowDef="let transacao; columns: columnsTransacoes;"></tr>
+            </table>
+          </div>
+          <div class="footer" fxFlex fxLayout="row" fxLayoutAlign="end center">
+            <button mat-raised-button class="bg-primary color-white"><mat-icon>price_check</mat-icon> Extrato completo</button>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="1rem">
+        <div class="card-pend-lancamentos border-theme-light" fxFlex fxLayout="column">
+          <div class="card-title color-theme">Lançamento pendentes</div>
+          <div class="div-table">
+            <table class="tbl-pend-lancamentos" mat-table [dataSource]="tablePendentes">
+              <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef>Data</th>
+                <td mat-cell *matCellDef="let transPendentes">{{ transPendentes.data }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="transacao">
+                <th mat-header-cell *matHeaderCellDef>Tipo de Transação</th>
+                <td mat-cell *matCellDef="let transPendentes">{{ transPendentes.transacao }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="valor">
+                <th mat-header-cell *matHeaderCellDef class="text-right">Valor</th>
+                <td mat-cell *matCellDef="let transPendentes" class="text-right"><span [ngClass]="(transPendentes.tipo == 'C') ? 'color-success' : 'color-danger'">{{ transPendentes.valor }}</span></td>
+              </ng-container>
+
+              <ng-container matColumnDef="acoes">
+                <th mat-header-cell *matHeaderCellDef class="text-right">Ações</th>
+                <td mat-cell *matCellDef="let transPendentes" class="text-right"><button mat-raised-button class="bg-danger color-white">Cancelar</button></td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="columnsPendentes"></tr>
+              <tr mat-row *matRowDef="let transacao; columns: columnsPendentes;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="1rem">
+        <div class="card-fut-lancamentos border-theme-light" fxFlex fxLayout="column">
+          <div class="card-title color-theme">Lançamento futuros</div>
+          <div class="div-table">
+            <table class="tbl-fut-lancamentos" mat-table [dataSource]="tableFuturos">
+              <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef>Data</th>
+                <td mat-cell *matCellDef="let transFuturos">{{ transFuturos.data }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="transacao">
+                <th mat-header-cell *matHeaderCellDef>Tipo de Transação</th>
+                <td mat-cell *matCellDef="let transFuturos">{{ transFuturos.transacao }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="valor">
+                <th mat-header-cell *matHeaderCellDef class="text-right">Valor</th>
+                <td mat-cell *matCellDef="let transFuturos" class="text-right"><span [ngClass]="(transFuturos.tipo == 'C') ? 'color-success' : 'color-danger'">{{ transFuturos.valor }}</span></td>
+              </ng-container>
+
+              <ng-container matColumnDef="acoes">
+                <th mat-header-cell *matHeaderCellDef class="text-right">Ações</th>
+                <td mat-cell *matCellDef="let transFuturos" class="text-right"><button mat-raised-button class="bg-danger color-white">Cancelar</button></td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="columnsFuturos"></tr>
+              <tr mat-row *matRowDef="let transacao; columns: columnsFuturos;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-col2" fxLayout="column" fxLayoutGap="1rem" fxFlex="nogrow">
+      <div class="img-banner mat-elevation-z2" *ngFor="let banner of imgBanner">
+        <img src="{{ banner.img }}" alt="" class="img-banner">
+        <div class="footer-banner">
+          <span class="title">{{ banner.title }}</span>
+          <span class="text">{{ banner.text }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
